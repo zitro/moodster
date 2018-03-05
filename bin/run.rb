@@ -15,7 +15,8 @@ request['Ocp-Apim-Subscription-Key'] = '5ea7409c64384da99125311ed192b572'
 # Request body
 # request.body = "{\"url\":\"http://liketherazor.com/wp-content/uploads/2014/08/1_Victoria-Jordan_Chris-Gillett-Houston-Headshot-Photographer.jpg\"}"
 
- request.body = "/Users/bryan/Development/learn_flatiron/code/mod2/final_project/moodster/app/assets/images/test.jpg"
+data = File.read("/Users/Abraham/Downloads/test.jpg")
+request.body = data
 
 
 response = Net::HTTP.start(uri.host, uri.port, :use_ssl => uri.scheme == 'https') do |http|
