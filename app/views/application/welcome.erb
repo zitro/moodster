@@ -24,25 +24,6 @@
   </head>
 
   <body>
-<div class="test">
-<%= form_for(@user) do |f| %>
-  <div id="my_camera"></div>
-
-  <input type=button value="Take Snapshot" onClick="take_snapshot()">
-
-  <div class="field">
-    <%= f.hidden_field :image %>
-    <%= f.label :image %>: <br />
-    <div id="results">Your captured image will appear here...</div>
-  </div>
-
-  ...
-  <!-- Other fields and submit button -->
-<% end %>
-
-</div>
-<!-- end of image submit -->
-
 
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
