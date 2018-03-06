@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+ before_action :require_login
+ before_action :get_user, :only [:show, :destroy]
+ skip_before_action :require_login, only: [:index]
+
 
 	def index
 	@users = User.all
@@ -20,11 +24,9 @@ class UsersController < ApplicationController
 	end
 
   def show
-    @user = User.find(params[:id])
   end
 
   def destroy
-    @user = User.find(params[:id])
     @user.delete
     redirect_to '/'
   end
@@ -33,4 +35,15 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :password, :password_confirmation)
   end
+
+	def get_user
+		@user = User.find(params[:id])
+	end
+
+	def require_login
+		return head(:forbidden) unless session.include? :user_id
+	end
+
+
+
 end
