@@ -8,4 +8,5 @@ body {
 .head .jumbotron{
 	/* background-color: red; */
 	background-image: url("testhp.jpg");
+	background-repeat: no-repeat;
 }
