@@ -1,4 +1,17 @@
-<p><%= @user.name %></p>
 
+<br>
+<br>
+<div class="user_dash">
+<h1>Welcome <%= @user.name.upcase %> Dashboard</h1>
+<h3>Click Below To Have Moodster Analyze Your Image </h3>
 
-<p><%= button_to "delete profile", @user, :method => :delete %></p>
+	<%= form_for @user do |f| %>
+	br><%= f.label :image %>
+	<%= f.text_field :image, placeholder: "Take Your Daily Picture" %></br>
+	<br><%= f.submit %></br>
+	<br><%= link_to "Go Back To All Your Posts", @user %></br>
+	<% end %>
+
+	<p><%= button_to "Delete Profile", @user, :method => :delete%></p>
+
+</div>
