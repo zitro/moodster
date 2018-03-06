@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
  before_action :require_login
- before_action :get_user, :only [:show, :destroy]
+ before_action :get_user, only: [:show, :destroy]
  skip_before_action :require_login, only: [:index]
 
 
