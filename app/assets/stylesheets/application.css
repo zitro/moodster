@@ -9,4 +9,5 @@ body {
 	/* background-color: red; */
 	background-image: url("testhp.jpg");
 	background-repeat: no-repeat;
+	background-position: center;
 }
