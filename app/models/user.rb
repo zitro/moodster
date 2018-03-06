@@ -5,4 +5,5 @@ class User < ApplicationRecord
   has_many :user_emotions
   has_many :emotions, through: :user_emotions
   has_many :photos
+	mount_base64_uploader :image, UserImageUploader
 end
