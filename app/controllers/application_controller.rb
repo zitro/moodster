@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-
-  def welcome
-  end
+  include SessionsHelper
+  # def welcome
+  # end
 end

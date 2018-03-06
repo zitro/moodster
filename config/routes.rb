@@ -9,6 +9,6 @@ Rails.application.routes.draw do
   post '/' => 'sessions#create'
   get '/signup' => 'users#new'
   post '/signup' => 'users#create'
-  post '/logout' => 'sessions#destroy'
+  delete '/logout' => 'sessions#destroy'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

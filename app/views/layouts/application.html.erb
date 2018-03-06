@@ -39,23 +39,22 @@
 					<a class="navbar-brand" href="#">Moodster</a>
 				</div>
 				<div id="navbar" class="navbar-collapse collapse">
-					<!-- <form class="navbar-form navbar-right"> -->
-						<!-- <div class="form-group">
-							<input type="text" placeholder="Name" class="form-control">
-						</div> -->
 					<div class="navbar-form navbar-right">
-							<!-- <input type="password" placeholder="Password" class="form-control"> -->
-						<%= form_for(:session, url: '/') do |f| %>
-							<%= f.label :name, class: 'head-text' %>
-							<%= f.text_field :name, class: 'form-control' %>
-							<%= f.label :password, class: 'head-text' %>
-							<%= f.password_field :password, class: 'form-control' %>
-							<%= f.submit "Login", class: "btn btn-success" %>
-							<%= link_to "Sign Up", new_user_path, class: "btn btn-success" %>
-						<% end %>
+            <% if logged_in? %>
+              <li><%= link_to "Profile", current_user %></li>
+              <li><%= link_to "Log out", 'logout_path', method: :delete %></li>
+            <% else %>
+  						<%= form_for(:session, url: '/') do |f| %>
+  							<%= f.label :name, class: 'head-text' %>
+  							<%= f.text_field :name, class: 'form-control' %>
+  							<%= f.label :password, class: 'head-text' %>
+  							<%= f.password_field :password, class: 'form-control' %>
+  							<%= f.submit "Login", class: "btn btn-success" %>
+  							<%= link_to "Sign Up", new_user_path, class: "btn btn-success" %>
+  						<% end %>
+            <% end %>
 					</div>
-					</div><!-- </form> -->
-				</div><!--/.navbar-collapse -->
+				</div>
 			</div>
 		</nav>
 
