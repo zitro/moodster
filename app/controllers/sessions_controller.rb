@@ -9,8 +9,10 @@ class SessionsController < ApplicationController
     if @user
       return head(:forbidden) unless @user.authenticate(params[:user][:password])
       session[:user_id] = @user.id
-      redirect_to root_path
+			byebug
+      redirect_to user_path(@user)
     else
+			byebug
       redirect_to login_path
     end
   end

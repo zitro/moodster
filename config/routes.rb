@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
-  root 'application#welcome'
+  # root 'application#welcome'
 
   resources :user_emotions
   resources :emotions
   resources :photos
   resources :users
-  get '/login' => 'sessions#new'
-  post '/login' => 'sessions#create'
+  get '/' => 'sessions#new'
+  post '/' => 'sessions#create'
   get '/signup' => 'users#new'
   post '/signup' => 'users#create'
   post '/logout' => 'sessions#destroy'
