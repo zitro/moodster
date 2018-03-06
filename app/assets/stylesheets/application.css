@@ -6,9 +6,10 @@ body {
 
 
 .head .jumbotron{
-	background-image: url("testhp2.jpg");
+	background-image: url("test_hp4.jpg");
 	background-repeat: no-repeat;
 	background-position: center;
+	background-size: contain;
 }
 
 
