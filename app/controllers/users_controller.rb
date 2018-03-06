@@ -44,6 +44,4 @@ class UsersController < ApplicationController
 		return head(:forbidden) unless session.include? :user_id
 	end
 
-
-
 end

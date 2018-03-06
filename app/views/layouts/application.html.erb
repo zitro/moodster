@@ -42,7 +42,7 @@
 					<div class="navbar-form navbar-right">
             <% if logged_in? %>
               <li><%= link_to "Profile", current_user %></li>
-              <li><%= link_to "Log out", 'logout_path', method: :delete %></li>
+              <li><%= link_to "Log out", logout_path, method: :delete %></li>
             <% else %>
   						<%= form_for(:session, url: '/') do |f| %>
   							<%= f.label :name, class: 'head-text' %>
