@@ -6,8 +6,7 @@ body {
 
 
 .head .jumbotron{
-	/* background-color: red; */
-	background-image: url("testhp.jpg");
+	background-image: url("testhp2.jpg");
 	background-repeat: no-repeat;
 	background-position: center;
 }
