@@ -42,14 +42,14 @@
             </div> -->
             <!-- <div class="form-group">
               <input type="password" placeholder="Password" class="form-control"> -->
-
-								<%= form_tag ("/"), class: "form-control", method: "post" do %>
-							  <div class="form-control"><%= text_field_tag :name, "Name" %></div>
-							  <div class="form-control"><%= text_field_tag :password, "Password" %></div>
-							  <%= submit_tag "Login" %>
-							  <div class="btn btn-success"><%= link_to(controller: 'users', action: 'new') { 'sign up' } %></div>
-							<% end %>
-            </div>
+						<%= form_for(:session, url: '/') do |f| %>
+						  <%= f.label :name %>
+              <%= f.text_field :name, class: 'form-control' %>
+              <%= f.label :password %>
+						  <%= f.password_field :password, class: 'form-control' %>
+						  <%= f.submit "Login", class: "btn btn-success" %>
+						  <%= link_to "Sign Up", new_user_path, class: "btn btn-success" %>
+						<% end %>
           </form>
         </div><!--/.navbar-collapse -->
       </div>

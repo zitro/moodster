@@ -5,21 +5,18 @@ class SessionsController < ApplicationController
 
 	def create
 
-    @user = User.find_by(name: params[:user][:name])
-    if @user
-      return head(:forbidden) unless @user.authenticate(params[:user][:password])
+    @user = User.find_by(name: params[:session][:name])
+    if @user && @user.authenticate(params[:session][:password])
       session[:user_id] = @user.id
-			byebug
       redirect_to user_path(@user)
     else
-			byebug
-      redirect_to login_path
+			flash.new[:danger] = "Invalid username/password combination"
+      render 'new'
     end
   end
 
   def destroy
-    session.delete :name
-    session.delete :password
-    redirect_to '/login'
+    session.delete :user_id
+    redirect_to root_path
   end
 end
