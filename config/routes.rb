@@ -5,8 +5,11 @@ Rails.application.routes.draw do
   resources :emotions
   resources :photos
   resources :users
-  get '/' => 'sessions#new'
-  post '/' => 'sessions#create'
+  resources :images, only: %i(create)
+
+  root "static#camera"
+  # get '/' => 'sessions#new'
+  # post '/' => 'sessions#create'
   get '/signup' => 'users#new'
   post '/signup' => 'users#create'
   delete '/logout' => 'sessions#destroy'
