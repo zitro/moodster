@@ -8,17 +8,17 @@
 
 	<%= form_for @user do |f| %>
 	<%= f.label :image %>
-	<%= f.text_field :image, placeholder: "Take Your Daily Picture" %>
-	<br><%= f.submit %></br>
+	<!-- <%= f.text_field :image, placeholder: "Take Your Daily Picture" %> -->
+	<br><%= f.submit "Take Your Image" %></br>
 
 	<% end %>
-<h3>Hate Moodster?</h3><a href="#hate">Delete Your Profile</a>
+<h3>Hate Moodster?</h3><a href="#why_do_you_hate_us">Delete Your Profile</a>
 
 <h1><%= @user.name.upcase %>'s Daily Moods</h1>
 <p>USERS POSTS GO HERE</p>
 
 
-<a name="hate"></a>
+<a name="why_do_you_hate_us"></a>
 <h4>No Problem, Just Press the Button Below To Delete Your Account</h4>
 	<p><%= button_to "Delete Profile", @user, :method => :delete%></p>
 

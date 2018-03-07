@@ -28,3 +28,19 @@
 		align-items: center;
 
 	}
+
+	#a1{
+		color: white;
+		text-shadow: 2px 2px black;
+		background-image: url("https://purepurposebook.files.wordpress.com/2014/12/how-to-take-a-screenshot.jpg?&h=auto");
+	}
+
+	.col-container {
+		display: flex;
+	  width: 100%;
+	}
+
+	.col {
+		flex: 1;
+	  padding: 16px;
+	}
