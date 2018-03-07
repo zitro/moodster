@@ -5,9 +5,19 @@ body {
   font-family: "Helvetica Neueu", "Helvetica", "Arial", sans;
 }
 
-button, input, #loader {
-  display: none;
+/* button, input, #loader {
+  display: none; */
 }
+
+/* .cameraStuff button {
+  display: none !important;
+}
+
+
+.cameraStuff input,
+.cameraStuff #loader {
+  display: none;
+} */
 
 input {
   width: 300px;

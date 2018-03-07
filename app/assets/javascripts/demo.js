@@ -121,7 +121,7 @@ $(function() {
       $("#show_stream").hide();
     };
 
-    $("#take_snapshots").click(function() {take_snapshots(3);});
+    $("#take_snapshots").click(function() {take_snapshots(1);});
     $("#snapshots").on("click", ".item", select_snapshot);
     $("#upload_snapshot").click(upload_snapshot);
     $("#discard_snapshot").click(discard_snapshot);
