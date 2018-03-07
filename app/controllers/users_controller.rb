@@ -25,6 +25,7 @@ class UsersController < ApplicationController
 	end
 
   def show
+		# redirect_to '/cam'
   end
 
   def destroy

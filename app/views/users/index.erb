@@ -1,4 +1,16 @@
+<br><br>
+<center>
+	<img src="http://zitrocapital.com/media/admin_top.jpg" alt="Administrator Top Image"></div>
+
+<h2>We Currently Have <%= @users.count %> Users</h2>
+
+
+
+<h1>
 <% @users.each do |user| %>
 
-<%= user.name %>
+ <div class="panel panel-default"><%= user.name %></div>
+	 <br>
 <% end %>
+</h1>
+</center>

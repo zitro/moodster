@@ -36,7 +36,7 @@ gem "jpeg_camera", "~> 1.3.2"
 gem 'carrierwave'
 gem 'carrierwave-base64'
 gem 'rmagick'
-
+gem 'mini_magick'
 
 
 # Use Capistrano for deployment
