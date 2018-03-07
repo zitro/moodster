@@ -31,28 +31,28 @@
 		<nav class="navbar navbar-inverse navbar-fixed-top">
 			<div class="container">
 				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
 						<span class="sr-only">Toggle navigation</span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
-					</button>
+					</button> -->
 					<!-- add in a logo image -->
-					<a class="navbar-brand" href="/"><img border="0" alt="Moodster" src="m_logo.png" width="100" height="100"></a>
+					<img alt="Moodster" class="imghead" src="http://zitrocapital.com/media/mhead_logo.png"</a>
 				</div>
 				<div id="navbar" class="navbar-collapse collapse">
 					<div class="navbar-form navbar-right">
             <% if logged_in? %>
-						<ul>
+						<ul class="navlinks">
               <li><%= link_to "Profile", current_user %></li>
               <li><%= link_to "Log out", logout_path, method: :delete %></li>
 						</ul>
             <% else %>
   						<%= form_for(:session, url: '/') do |f| %>
-  							<%= f.label :name, class: 'head-text' %>
-  							<%= f.text_field :name, class: 'form-control' %>
-  							<%= f.label :password, class: 'head-text' %>
-  							<%= f.password_field :password, class: 'form-control' %>
+  							<!-- <%= f.label :name, class: 'head-text' %> -->
+  							<%= f.text_field :name, placeholder: 'Name', class: 'form-control' %>
+  							<!-- <%= f.label :password, class: 'head-text' %> -->
+  							<%= f.password_field :password,placeholder: 'Password', class: 'form-control' %>
   							<%= f.submit "Login", class: "btn btn-success" %>
   							<%= link_to "Sign Up", new_user_path, class: "btn btn-success" %>
   						<% end %>

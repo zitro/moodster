@@ -1,47 +1,24 @@
-<style>
-#video-container {
-  margin: 2em auto 0;
-  width: 500px;
-  padding: 2em;
-  background: white;
-  -webkit-box-shadow: 0 1px 10px #D9D9D9;
-  -moz-box-shadow: 0 1px 10px #D9D9D9;
-  -ms-box-shadow: 0 1px 10px #D9D9D9;
-  -o-box-shadow: 0 1px 10px #D9D9D9;
-  box-shadow: 0 1px 10px #D9D9D9;
-}
-</style>
 
 <br>
 <br>
 <div class="user_dash">
-<h1>Welcome <%= @user.name.upcase %> Dashboard</h1>
+<h1>Welcome <%= @user.name.upcase %> To Your Dashboard</h1>
 <h3>Click Below To Have Moodster Analyze Your Image </h3>
 
 	<%= form_for @user do |f| %>
-	br><%= f.label :image %>
-	<%= f.text_field :image, placeholder: "Take Your Daily Picture" %></br>
+	<%= f.label :image %>
+	<%= f.text_field :image, placeholder: "Take Your Daily Picture" %>
 	<br><%= f.submit %></br>
-	<br><%= link_to "Go Back To All Your Posts", @user %></br>
+	<!-- <br><%= link_to "Go Back To All Your Posts", @user %></br> -->
 	<% end %>
+<h3>Hate Moodster?</h3><a href="#hate">Delete Your Profile</a>
 
+<h1><%= @user.name.upcase %>'s Daily Moods</h1>
+<p>USERS POSTS GO HERE</p>
+
+
+<a name="hate"></a>
+<h4>No Problem, Just Press the Button Below To Delete Your Account</h4>
 	<p><%= button_to "Delete Profile", @user, :method => :delete%></p>
 
 </div>
-
-<!-- test below -->
-<script>window.onload = function() {
-
-  // Normalize the various vendor prefixed versions of getUserMedia.
-  navigator.getUserMedia = (navigator.getUserMedia ||
-                            navigator.webkitGetUserMedia ||
-                            navigator.mozGetUserMedia ||
-                            navigator.msGetUserMedia);
-
-}</script>
-
-<div id="video-container">
-    <video id="camera-stream" width="500" autoplay></video>
-  </div>
-  <script src="script.js"></script>
-</body>

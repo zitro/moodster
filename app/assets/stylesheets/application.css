@@ -1,24 +1,29 @@
 
-body {
-  padding-top: 50px;
-  padding-bottom: 20px;
-}
+	body {
+	  padding-top: 50px;
+	  padding-bottom: 20px;
+	}
+
+	 a{
+	  color: red;
+	}
+
+	.img1{
+		align-content: center;
+		
+	}
+
+	.navlinks {
+	  color: red;
+	}
 
 
-.head .jumbotron{
-	background-image: url("test_hp4.jpg");
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: contain;
-}
+	.head-text{
+		color: white;
+	}
 
 
-.head-text{
-	color: white;
-}
+	.user_dash{
+		align-items: center;
 
-
-.user_dash{
-	align-items: center;
-
-}
+	}
