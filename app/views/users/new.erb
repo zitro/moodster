@@ -1,12 +1,15 @@
-<%= form_for @user, controller: 'users', action: 'create' do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <br>
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-  <br>
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %>
-  <br>
-  <%= f.submit "create" %>
-<% end %>
+
+<div class="signup"><center><img src="http://zitrocapital.com/media/msignup2.jpg" alt="Sign Up Page Image Logo"></div></center>
+	<center><br>
+	<h4>Fill in the form below to join our community</h4>
+			<%= form_for @user, controller: 'users', action: 'create' do |f| %>
+		  <%= f.text_field :name, placeholder: 'Name' %>
+		  <br>
+		  <%= f.password_field :password, placeholder: 'Password' %>
+		  <br>
+		  <%= f.password_field :password_confirmation, placeholder: 'Confirm Password' %>
+		  <br><br>
+		  <%= f.submit "Create Account", class:'btn btn-success' %>
+			<% end %>
+		</center>
+</div>

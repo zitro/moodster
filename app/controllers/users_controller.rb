@@ -1,11 +1,12 @@
 class UsersController < ApplicationController
   before_action :require_login
+	before_action :get_user, only: [:show, :destroy]
   skip_before_action :require_login, only: [:index, :new, :create]
-  # before_action :get_user, only: [:show, :destroy]
+
 
 
 	def index
-	@users = User.all
+		@users = User.all
 	end
 
 	def new
@@ -36,9 +37,9 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name, :password, :password_confirmation)
   end
 
-	# def get_user
-	# 	@user = User.find(params[:id])
-	# end
+	def get_user
+		@user = User.find(params[:id])
+	end
 
 	def require_login
     @user = User.find(params[:id])

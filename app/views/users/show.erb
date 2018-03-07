@@ -1,7 +1,8 @@
 
 <br>
 <br>
-<div class="user_dash">
+<div class="signup"><center><img src="http://zitrocapital.com/media/msignup2.jpg" alt="Sign Up Page Image Logo"></div></center>
+<center><div class="user_dash">
 <h1>Welcome <%= @user.name.upcase %> To Your Dashboard</h1>
 <h3>Click Below To Have Moodster Analyze Your Image </h3>
 
@@ -9,7 +10,7 @@
 	<%= f.label :image %>
 	<%= f.text_field :image, placeholder: "Take Your Daily Picture" %>
 	<br><%= f.submit %></br>
-	<!-- <br><%= link_to "Go Back To All Your Posts", @user %></br> -->
+
 	<% end %>
 <h3>Hate Moodster?</h3><a href="#hate">Delete Your Profile</a>
 
@@ -21,4 +22,4 @@
 <h4>No Problem, Just Press the Button Below To Delete Your Account</h4>
 	<p><%= button_to "Delete Profile", @user, :method => :delete%></p>
 
-</div>
+</div></center>
