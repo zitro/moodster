@@ -5,13 +5,9 @@
 <center><div class="user_dash">
 <h1>Welcome <%= @user.name.upcase %> To Your Dashboard</h1>
 <div class="panel panel-default"><h3>Click Below To Have Moodster Analyze Your Image </h3>
+<%= link_to "Take Picture", cam_path, method: :get %>
+</div>
 
-	<%= form_for @user do |f| %>
-	<%= f.label :image %>
-	<!-- <%= f.text_field :image, placeholder: "Take Your Daily Picture" %> -->
-	<br><%= f.submit "Take Your Image" %></br>
-
-	<% end %><br></div>
 <h3>Hate Moodster?</h3><a href="#why_do_you_hate_us">Delete Your Profile</a>
 
 <h1><%= @user.name.upcase %>'s Daily Moods</h1>
