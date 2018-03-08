@@ -3,9 +3,8 @@ require 'net/http'
 class User < ApplicationRecord
   validates :name, uniqueness: true, presence: true
   validates :password, presence: true
-  has_secure_password
-	mount_uploader :image, UserImageUploader
   has_many :features
+  has_secure_password
 
   def self.get_emotion_hash
     # NOTE: You must use the same region in your REST call as you used to obtain your subscription keys.
