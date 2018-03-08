@@ -2,9 +2,6 @@ Rails.application.routes.draw do
   resources :features
   # root 'application#welcome'
 
-  resources :user_emotions
-  resources :emotions
-  resources :photos
   resources :users
   resources :images, only: %i(create)
 

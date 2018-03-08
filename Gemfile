@@ -38,6 +38,8 @@ gem 'carrierwave-base64'
 gem 'rmagick'
 gem 'mini_magick'
 
+gem "paperclip", "~> 4.1.1"
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

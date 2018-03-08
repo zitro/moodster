@@ -8,9 +8,13 @@ class ImagesController < ApplicationController
     # @data1 = request.body
     @dog = "poodle"
     @saved_picture = File.open("plzwork.jpg", 'wb') {|f| f.write request.body.read }
-    @emo_hash = User.get_emotion_hash
+    @string_api_return = User.get_emotion_hash
 
-    session[:emo] = @emo_hash    
+
+
+    @new_feature = Feature.create(user_id: @user.id, hashreturn: @string_api_return)
+
+    session[:emo] = @emo_hash
     redirect_to @user
 
     # TODO: save this blob as jpeg file somewhere on the disk

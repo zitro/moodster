@@ -4,10 +4,8 @@ class User < ApplicationRecord
   validates :name, uniqueness: true, presence: true
   validates :password, presence: true
   has_secure_password
-  has_many :user_emotions
-  has_many :emotions, through: :user_emotions
-  has_many :photos
 	mount_uploader :image, UserImageUploader
+  has_many :features
 
   def self.get_emotion_hash
     # NOTE: You must use the same region in your REST call as you used to obtain your subscription keys.
@@ -21,7 +19,7 @@ class User < ApplicationRecord
     # Request headers
     request['Content-Type'] = 'application/octet-stream'
     # NOTE: Replace the "Ocp-Apim-Subscription-Key" value with a valid subscription key.
-    request['Ocp-Apim-Subscription-Key'] = 'e2ffa199dd804b75ab4307de19b543f1'
+    request['Ocp-Apim-Subscription-Key'] = 'efab7f5dd06a4f5cbb80374da9e9ef79'
     # Request body
     # request.body = "{\"url\":\"http://liketherazor.com/wp-content/uploads/2014/08/1_Victoria-Jordan_Chris-Gillett-Houston-Headshot-Photographer.jpg\"}"
     data = File.read("./plzwork.jpg")

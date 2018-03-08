@@ -24,7 +24,6 @@ class UsersController < ApplicationController
 
   def show
     # session[:emo] accessible from here
-		byebug
   end
 
   def destroy

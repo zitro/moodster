@@ -61,6 +61,9 @@ GEM
       mime-types (~> 3.0)
     childprocess (0.8.0)
       ffi (~> 1.0, >= 1.0.11)
+    climate_control (0.2.0)
+    cocaine (0.5.8)
+      climate_control (>= 0.0.3, < 1.0)
     coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0)
@@ -107,6 +110,11 @@ GEM
     nio4r (2.2.0)
     nokogiri (1.8.2)
       mini_portile2 (~> 2.3.0)
+    paperclip (4.1.1)
+      activemodel (>= 3.0.0)
+      activesupport (>= 3.0.0)
+      cocaine (~> 0.5.3)
+      mime-types
     public_suffix (3.0.2)
     puma (3.11.3)
     rack (2.0.4)
@@ -205,6 +213,7 @@ DEPENDENCIES
   jquery-rails
   listen (>= 3.0.5, < 3.2)
   mini_magick
+  paperclip (~> 4.1.1)
   puma (~> 3.7)
   rails (~> 5.1.5)
   rmagick
