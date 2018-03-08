@@ -8,7 +8,7 @@ uri = URI('https://westcentralus.api.cognitive.microsoft.com/face/v1.0/detect')
 uri.query = URI.encode_www_form({
     # Request parameters
 
-    'returnFaceAttributes' => 'age,gender,emotion'
+    'returnFaceAttributes' => 'age,gender,emotion,makeup,glasses,facialHair,accessories'
 })
 
 request = Net::HTTP::Post.new(uri.request_uri)

@@ -47,17 +47,17 @@
 <center><div class="user_dash">
 <h1>Welcome <%= @user.name.upcase %> To Your Dashboard</h1>
 <div class="panel panel-default"><h3>Click Below To Have Moodster Analyze Your Image </h3>
-<%= link_to "Take Picture", cam_path, method: :get %>
-</div>
+<%= link_to "Take Picture", cam_path, method: :get, class: "btn btn-success" %>
+<br><p> </p></div>
 
-<h3>Hate Moodster?</h3><a href="#why_do_you_hate_us">Delete Your Profile</a>
+<h3>Hate Moodster?</h3><a class="btn btn-default" href="#why_do_you_hate_us">Delete Your Profile</a>
 
 <h1><%= @user.name.upcase %>'s Daily Moods</h1>
 <p>USERS POSTS GO HERE</p>
 
 
 <div class="panel panel-default"><a name="why_do_you_hate_us"></a>
-<h4>No Problem, Just Press the Button Below To Delete Your Account</h4>
-	<p><%= button_to "Delete Profile", @user, :method => :delete%></p><br></div>
+<h4>Are You Sure? If You Are Just Press The Button Below To Delete Your Account</h4>
+	<p><%= button_to "Delete Profile", @user, :method => :delete, class: "btn btn-danger"%></p><br></div>
 
 </div></center>

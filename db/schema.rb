@@ -12,28 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20180308150232) do
 
-  create_table "emotions", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "features", force: :cascade do |t|
     t.string "hashreturn"
     t.integer "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "photos", force: :cascade do |t|
-    t.integer "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "user_emotions", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "emotion_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -43,7 +24,6 @@ ActiveRecord::Schema.define(version: 20180308150232) do
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "image"
   end
 
 end
