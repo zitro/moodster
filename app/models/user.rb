@@ -3,7 +3,8 @@ require 'net/http'
 class User < ApplicationRecord
   validates :name, uniqueness: true, presence: true
   validates :password, presence: true
-  has_many :features
+	has_many :features
+
   has_secure_password
 
   def self.get_emotion_hash
@@ -12,7 +13,7 @@ class User < ApplicationRecord
     #   URL below with "westcentralus".
     uri = URI('https://westcentralus.api.cognitive.microsoft.com/face/v1.0/detect')
     uri.query = URI.encode_www_form({
-			'returnFaceAttributes' => 'age,gender,emotion'
+			'returnFaceAttributes' => 'age,gender,emotion,makeup,glasses,facialHair,accessories'
     })
     request = Net::HTTP::Post.new(uri.request_uri)
     # Request headers

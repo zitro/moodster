@@ -15,6 +15,7 @@ class SessionsController < ApplicationController
 
   def destroy
     log_out
+		File.delete('./app/assets/images/plzwork.jpg') if File.exist?('./app/assets/images/plzwork.jpg')
     redirect_to '/'
   end
 end

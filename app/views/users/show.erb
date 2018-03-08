@@ -55,6 +55,14 @@
 <h1><%= @user.name.upcase %>'s Daily Moods</h1>
 <p>USERS POSTS GO HERE</p>
 
+ <%= @user.features.last.emotions %>
+<h1>test</h1>
+ <%  @user.features.each do |f| %>
+	<%= f.age %>
+	<%= f.gender %>
+	<%= f.emotions %>
+<% end %>
+
 
 <div class="panel panel-default"><a name="why_do_you_hate_us"></a>
 <h4>Are You Sure? If You Are Just Press The Button Below To Delete Your Account</h4>

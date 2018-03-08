@@ -33,12 +33,12 @@ gem 'bcrypt', '~> 3.1.7'
 gem "jpeg_camera", "~> 1.3.2"
 
 #image handling
-gem 'carrierwave'
-gem 'carrierwave-base64'
-gem 'rmagick'
-gem 'mini_magick'
-
-gem 'paperclip', github: 'thoughtbot/paperclip'
+# gem 'carrierwave'
+# gem 'carrierwave-base64'
+# gem 'rmagick'
+# gem 'mini_magick'
+#
+# gem 'paperclip', github: 'thoughtbot/paperclip'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
