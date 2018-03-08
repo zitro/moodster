@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :features
   # root 'application#welcome'
 
   resources :user_emotions
