@@ -1,7 +1,9 @@
 
+<!-- Bootstrap core CSS -->
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 <style>
 body {
-  background-color: #ddd;
+  background-color: #99A2A7;
   padding: 0.5em;
   text-align: center;
   font-family: "Helvetica Neueu", "Helvetica", "Arial", sans;
@@ -70,9 +72,11 @@ button, #upload_status, #upload_result, #loader {
 }
 
 </style>
-
-<div id="camera_info"></div>
-<div id="stream_stats"></div>
+<br><br><br><br>
+<h1>Instructions</h1>
+<p>1. Please take a snap snapshot</p>
+<p>2. Select the image you'd like to use</p>
+<p>3. Press the Submit button</p>
 
 <div id="camera">
   <div class="placeholder">
@@ -83,14 +87,16 @@ button, #upload_status, #upload_result, #loader {
     It's free.
   </div>
 </div><br>
+<div id="camera_info"></div>
+<div id="stream_stats"></div>
 
-<button id="take_snapshots">Take more snapshots</button>
-<button id="show_stream">Show stream</button><br>
+<button class="btn btn-success" id="take_snapshots">Take A Snapshot</button>
+<button class="btn btn-primary" id="show_stream">Show Stream</button><br>
 
 <div id="snapshots"></div>
-
-<button id="discard_snapshot">Discard snapshot</button>
-<button id="upload_snapshot">Upload</button><br>
+<h3>Select an Image</h3>
+<button class="btn btn-warning" id="discard_snapshot">Discard snapshot</button>
+<button class="btn btn-success" id="upload_snapshot">Submit Image</button><br>
 
 <img src="/assets/loader.gif" id="loader">
 <div id="upload_status"></div>
