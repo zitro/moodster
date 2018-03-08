@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :users
   resources :images, only: %i(create)
 
-  get '/cam' => "static#camera"
+  get '/cam' => "images#camera"
   get '/' => 'sessions#new'
   post '/' => 'sessions#create'
   get '/signup' => 'users#new'

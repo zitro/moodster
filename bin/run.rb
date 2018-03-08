@@ -15,7 +15,7 @@ request['Ocp-Apim-Subscription-Key'] = '5ea7409c64384da99125311ed192b572'
 # Request body
 # request.body = "{\"url\":\"http://liketherazor.com/wp-content/uploads/2014/08/1_Victoria-Jordan_Chris-Gillett-Houston-Headshot-Photographer.jpg\"}"
 
-data = File.read("/Users/Abraham/Downloads/test.jpg")
+data = File.read("./plzwork.jpg")
 request.body = data
 
 

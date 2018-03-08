@@ -1,14 +1,12 @@
-
-<style>
-body {
+/* body {
   background-color: #ddd;
   padding: 0.5em;
   text-align: center;
   font-family: "Helvetica Neueu", "Helvetica", "Arial", sans;
 }
 
-button, input, #loader {
-  display: none;
+/* button, input, #loader {
+  display: none; */
 }
 
 /* .cameraStuff button {
@@ -20,7 +18,7 @@ button, input, #loader {
 .cameraStuff #loader {
   display: none;
 } */
-
+/*
 input {
   width: 300px;
 }
@@ -67,36 +65,4 @@ input {
 
 button, #upload_status, #upload_result, #loader {
   margin: 0.5em;
-}
-
-</style>
-
-<p>
-  This is a demonstration page for
-  <a href="https://amw.github.io/jpeg_camera/doc/">JpegCamera library</a>.
-</p>
-
-<div id="camera_info"></div>
-<div id="stream_stats"></div>
-
-<div id="camera">
-  <div class="placeholder">
-    Your browser does not support camera access.<br>
-    We recommend
-    <a href="https://www.google.com/chrome/" target="_blank">Chrome</a>
-    &mdash; modern, secure, fast browser from Google.<br>
-    It's free.
-  </div>
-</div><br>
-
-<button id="take_snapshots">Take more snapshots</button>
-<button id="show_stream">Show stream</button><br>
-
-<div id="snapshots"></div>
-
-<button id="discard_snapshot">Discard snapshot</button>
-<button id="upload_snapshot">Upload</button><br>
-
-<img src="/assets/loader.gif" id="loader">
-<div id="upload_status"></div>
-<div id="upload_result"></div>
+} */

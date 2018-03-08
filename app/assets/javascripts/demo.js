@@ -67,7 +67,10 @@ $(function() {
       $("#upload_snapshot").prop("disabled", true);
 
       var snapshot = $(".item.selected").data("snapshot");
-      snapshot.upload({api_url: api_url}).done(upload_done).fail(upload_fail);
+      snapshot.upload({api_url: api_url}).done((response) => {
+        window.location.replace("/");
+
+      }).fail(upload_fail);
     };
 
     var upload_done = function(response) {
@@ -75,6 +78,8 @@ $(function() {
       $("#loader").hide();
       $("#upload_status").html("Upload successful");
       $("#upload_result").html(response);
+      var div = document.getElementById('cam-container')
+      div.parentNode.removeChild(div)
     };
 
     var upload_fail = function(code, error, response) {

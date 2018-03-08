@@ -3,8 +3,6 @@ class UsersController < ApplicationController
 	before_action :get_user, only: [:show, :destroy]
   skip_before_action :require_login, only: [:index, :new, :create]
 
-
-
 	def index
 		@users = User.all
 	end
@@ -25,7 +23,7 @@ class UsersController < ApplicationController
 	end
 
   def show
-		# redirect_to '/cam'
+    # session[:emo] accessible from here
   end
 
   def destroy
