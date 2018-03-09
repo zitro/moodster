@@ -22,7 +22,7 @@ class User < ApplicationRecord
     request['Ocp-Apim-Subscription-Key'] = 'efab7f5dd06a4f5cbb80374da9e9ef79'
     # Request body
     # request.body = "{\"url\":\"http://liketherazor.com/wp-content/uploads/2014/08/1_Victoria-Jordan_Chris-Gillett-Houston-Headshot-Photographer.jpg\"}"
-    data = File.read("./plzwork.jpg")
+    data = File.read('./app/assets/images/plzwork.jpg')
     request.body = data
     response = Net::HTTP.start(uri.host, uri.port, :use_ssl => uri.scheme == 'https') do |http|
         http.request(request)
