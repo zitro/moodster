@@ -2,7 +2,7 @@
 <!-- Bootstrap core CSS -->
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 <style>
-	:root {
+	/* :root {
 	  --jumbotron-padding-y: 3rem;
 	}
 
@@ -38,7 +38,8 @@
 
 	footer p {
 	  margin-bottom: .25rem;
-	}
+	} */
+
 
 	.userimg{
 		border-style: inset;
@@ -46,15 +47,15 @@
 	}
 
 	.card{
-		background-image: url("https://zitrocapital.com/media/cardbg4.jpg");
+		background-image: url("https://zitrocapital.com/media/cardbg9.jpg");
 		color: white;
-		text-shadow: 2px 1px black;
+		text-shadow: 2px 2px 2px #000000; color:white;z-index:99;
 	}
 
 	.topsec{
 		/* background-image: url("https://zitrocapital.com/media/bg_about.jpg"); */
 	}
-
+ 
 
 	.box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
 </style>
@@ -63,7 +64,7 @@
 <div class="signup"><center><img src="http://zitrocapital.com/media/msignup2.jpg" alt="Sign Up Page Image Logo"></div></center>
 <center><div class="user_dash">
 <h1>Welcome <%= @user.name.capitalize %></h1>
-<div class="panel panel-default"><h3>Click Below to Analyze Your Face </h3>
+<div class="panel panel-default"><h3>Click Below to Moodster Analyze Your Face </h3>
 <%= link_to "Take Picture", cam_path, method: :get, class: "btn btn-success" %>
 <br><p> </p></div>
 
@@ -82,10 +83,10 @@
 							<%= image_tag("#{@user.id}/#{index+1}.jpg", :size => "250x300", :class => "userimg") %>
 						 <% end %>
 
-						 <h4 class="card-title">You look like you are:</h4>
+						 <h4 class="card-title">You appear to be a:</h4>
              <h5 class="card-text text-center"><%= feature.gender.capitalize %></h5>
 
-						 <h4 class="card-title">You appear to be around:</h4>
+						 <h4 class="card-title">You are approximately:</h4>
 						 <h5 class="card-text text-center" style="height: 10rem"><%= feature.age %></h5>
 
 						 <h4 class="card-title">Your face is exhibiting:</h4>
@@ -97,7 +98,7 @@
 						 <h4 class="card-title">Glasses?:</h4>
 						 <h5 class="card-text text-center" style="height: 10rem"><%= feature.glasses %></h5>
 
-						 <h4 class="card-title">Facial hair?:</h4>
+						 <h4 class="card-title">Facial Hair?:</h4>
 						 <h5 class="card-text text-center" style="height: 10rem"><%= feature.facialHair %></h5>
 
 						<h4 class="card-title">We believe you are wearing:</h4>
