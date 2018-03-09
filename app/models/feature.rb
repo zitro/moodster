@@ -10,11 +10,11 @@ class Feature < ApplicationRecord
   end
 
   def emotions
-		 eval(self[:hashreturn]).first[:faceAttributes][:emotion].map {|k, v| @k = "#{k}: #{(v*100).to_s[0..5].to_f}%"}.join("','")
+		 eval(self[:hashreturn]).first[:faceAttributes][:emotion].map {|k, v| @k = "#{k.capitalize}: #{(v*100).to_s[0..5].to_f}% "}.join(" / ")
   end
 
 	def makeup
-		 eval(self[:hashreturn]).first[:faceAttributes][:makeup]
+		 eval(self[:hashreturn]).first[:faceAttributes][:makeup].map {|k, v| @k = "#{k.capitalize}: #{v} / "}.join
 	end
 
 	def glasses
@@ -22,10 +22,10 @@ class Feature < ApplicationRecord
 	end
 
 	def facialHair
-		 eval(self[:hashreturn]).first[:faceAttributes][:facialHair]
+		 eval(self[:hashreturn]).first[:faceAttributes][:facialHair].map{|k,v| "#{k} : #{v} "}.join(" / ")
 	end
 
 	def accessories
-		 eval(self[:hashreturn]).first[:faceAttributes][:accessories]
+		 eval(self[:hashreturn]).first[:faceAttributes][:accessories].first.map{|k,v| "#{k.capitalize} : #{v} "}.join(" / ")
 	end
 end
