@@ -63,25 +63,25 @@
            <div class="card-body">
 
 						 <h3 class="card-title">You look like you are:</h3>
-             <h4 class="card-text text-center"><%= @user.features.last.gender.capitalize %></h4>
+             <h4 class="card-text text-center"><%= feature.gender.capitalize %></h4>
 
 						 <h3 class="card-title">You appear to be around:</h3>
-						 <h4 class="card-text text-center" style="height: 10rem"><%= @user.features.last.age %> years old</h4>
+						 <h4 class="card-text text-center" style="height: 10rem"><%= feature.age %> years old</h4>
 
 						 <h3 class="card-title">Your face is exhibiting:</h3>
-						 <h4 class="card-text text-center" style="height: 10rem"><%= @user.features.last.emotions %></h4>
+						 <h4 class="card-text text-center" style="height: 10rem"><%= feature.emotions %></h4>
 
 						 <h3 class="card-title">Makeup?:</h3>
- 						<h4 class="card-text text-center" style="height: 10rem"><%= @user.features.last.makeup %></h4>
+ 						<h4 class="card-text text-center" style="height: 10rem"><%= feature.makeup %></h4>
 
 						<h3 class="card-title">Glasses?:</h3>
-						<h4 class="card-text text-center" style="height: 10rem"><%= @user.features.last.glasses %></h4>
+						<h4 class="card-text text-center" style="height: 10rem"><%= feature.glasses %></h4>
 
 						<h3 class="card-title">Facial hair?:</h3>
-						<h4 class="card-text text-center" style="height: 10rem"><%= @user.features.last.facialHair %></h4>
+						<h4 class="card-text text-center" style="height: 10rem"><%= feature.facialHair %></h4>
 
 						<h3 class="card-title">We believe you are wearing:</h3>
-						<h4 class="card-text text-center" style="height: 10rem"><%= @user.features.last.accessories %></h4>
+						<h4 class="card-text text-center" style="height: 10rem"><%= feature.accessories %></h4>
 
            </div>
          </div>
