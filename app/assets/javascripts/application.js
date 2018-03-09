@@ -16,3 +16,5 @@
 //= require turbolinks
 //= require camera_config
 //= require_tree .
+//= require Chart.bundle
+//= require chartkick

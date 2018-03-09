@@ -39,6 +39,7 @@ gem "jpeg_camera", "~> 1.3.2"
 # gem 'mini_magick'
 #
 # gem 'paperclip', github: 'thoughtbot/paperclip'
+gem "chartkick"
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
