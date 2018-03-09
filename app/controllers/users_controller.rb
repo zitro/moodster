@@ -1,3 +1,5 @@
+require 'fileutils'
+
 class UsersController < ApplicationController
   before_action :require_login
 	before_action :get_user, only: [:show, :destroy]
@@ -28,7 +30,7 @@ class UsersController < ApplicationController
 
   def destroy
     @user.delete
-    File.delete('./app/assets/images/plzwork.jpg') if File.exist?('./app/assets/images/plzwork.jpg')
+		FileUtils.remove_dir("./app/assets/images/#{@user.id}") if Dir.exist?("./app/assets/images/#{@user.id}")
     redirect_to '/'
   end
 

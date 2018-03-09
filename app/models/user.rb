@@ -7,7 +7,7 @@ class User < ApplicationRecord
 
   has_secure_password
 
-  def self.get_emotion_hash
+  def self.get_emotion_hash(sesh)
     # NOTE: You must use the same region in your REST call as you used to obtain your subscription keys.
     #   For example, if you obtained your subscription keys from westcentralus, replace "westus" in the
     #   URL below with "westcentralus".
@@ -21,8 +21,8 @@ class User < ApplicationRecord
     # NOTE: Replace the "Ocp-Apim-Subscription-Key" value with a valid subscription key.
     request['Ocp-Apim-Subscription-Key'] = 'efab7f5dd06a4f5cbb80374da9e9ef79'
     # Request body
-    # request.body = "{\"url\":\"http://liketherazor.com/wp-content/uploads/2014/08/1_Victoria-Jordan_Chris-Gillett-Houston-Headshot-Photographer.jpg\"}"
-    data = File.read('./app/assets/images/plzwork.jpg')
+    @user = User.find(sesh)
+    data = File.read("./app/assets/images/#{@user.id}/#{@user.features.length+1}.jpg")
     request.body = data
     response = Net::HTTP.start(uri.host, uri.port, :use_ssl => uri.scheme == 'https') do |http|
         http.request(request)

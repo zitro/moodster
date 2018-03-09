@@ -6,7 +6,8 @@ class Feature < ApplicationRecord
   end
 
   def age
-		 eval(self[:hashreturn]).first[:faceAttributes][:age]
+		 myage = eval(self[:hashreturn]).first[:faceAttributes][:age]
+		 "#{myage} Years Old"
   end
 
   def emotions

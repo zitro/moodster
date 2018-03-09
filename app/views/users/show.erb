@@ -40,6 +40,22 @@
 	  margin-bottom: .25rem;
 	}
 
+	.userimg{
+		border-style: inset;
+    border-width: medium;
+	}
+
+	.card{
+		background-image: url("https://zitrocapital.com/media/cardbg4.jpg");
+		color: white;
+		text-shadow: 2px 1px black;
+	}
+
+	.topsec{
+		/* background-image: url("https://zitrocapital.com/media/bg_about.jpg"); */
+	}
+
+
 	.box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
 </style>
 <br>
@@ -51,37 +67,41 @@
 <%= link_to "Take Picture", cam_path, method: :get, class: "btn btn-success" %>
 <br><p> </p></div>
 
-<% if File.exist?('./app/assets/images/plzwork.jpg') %>
-	<%= image_tag("plzwork.jpg") %>
-<% end%>
+<div class="topsec"><% if File.exist?("./app/assets/images/#{@user.id}/#{@user.features.length}.jpg") %>
+	<%= image_tag("#{@user.id}/#{@user.features.length}.jpg", :size => "292x350", :class => "userimg") %>
+<% end %></div>
 
 <h1><%= @user.name.upcase %>'s Face Analyses</h1>
 
- <row><div class="userfeature"><% @user.features.map do |feature| %>
+ <row><div><% @user.features.each_with_index do |feature, index| %>
        <div class="col-md-4 text-center" style="padding: 1em">
          <div class="card" style="background-color:#EBF0F2; padding: 1em">
            <div class="card-body">
 
-						 <h3 class="card-title">You look like you are:</h3>
-             <h4 class="card-text text-center"><%= feature.gender.capitalize %></h4>
+						 <% if File.exist?("./app/assets/images/#{@user.id}/#{index+1}.jpg") %>
+							<%= image_tag("#{@user.id}/#{index+1}.jpg", :size => "250x300", :class => "userimg") %>
+						 <% end %>
 
-						 <h3 class="card-title">You appear to be around:</h3>
-						 <h4 class="card-text text-center" style="height: 10rem"><%= feature.age %> years old</h4>
+						 <h4 class="card-title">You look like you are:</h4>
+             <h5 class="card-text text-center"><%= feature.gender.capitalize %></h5>
 
-						 <h3 class="card-title">Your face is exhibiting:</h3>
-						 <h4 class="card-text text-center" style="height: 10rem"><%= feature.emotions %></h4>
+						 <h4 class="card-title">You appear to be around:</h4>
+						 <h5 class="card-text text-center" style="height: 10rem"><%= feature.age %></h5>
 
-						 <h3 class="card-title">Makeup?:</h3>
- 						<h4 class="card-text text-center" style="height: 10rem"><%= feature.makeup %></h4>
+						 <h4 class="card-title">Your face is exhibiting:</h4>
+						 <h5 class="card-text text-center" style="height: 10rem"><%= feature.emotions %></h5>
 
-						<h3 class="card-title">Glasses?:</h3>
-						<h4 class="card-text text-center" style="height: 10rem"><%= feature.glasses %></h4>
+						 <h4 class="card-title">Makeup?:</h4>
+ 						 <h5 class="card-text text-center" style="height: 10rem"><%= feature.makeup %></h5>
 
-						<h3 class="card-title">Facial hair?:</h3>
-						<h4 class="card-text text-center" style="height: 10rem"><%= feature.facialHair %></h4>
+						 <h4 class="card-title">Glasses?:</h4>
+						 <h5 class="card-text text-center" style="height: 10rem"><%= feature.glasses %></h5>
 
-						<h3 class="card-title">We believe you are wearing:</h3>
-						<h4 class="card-text text-center" style="height: 10rem"><%= feature.accessories %></h4>
+						 <h4 class="card-title">Facial hair?:</h4>
+						 <h5 class="card-text text-center" style="height: 10rem"><%= feature.facialHair %></h5>
+
+						<h4 class="card-title">We believe you are wearing:</h4>
+						<h5 class="card-text text-center" style="height: 10rem"><%= feature.accessories %></h5>
 
            </div>
          </div>
@@ -90,7 +110,8 @@
 	 </div></row>
 
 <a name="why_do_you_hate_us"></a>
-<h4>Are You Sure? If You Are Just Press The Button Below To Delete Your Account</h4>
+<h3>Want To Delete Your Account?</h3>
+<h4>If You Are Just Press The Button Below To Delete Your Account</h4>
 	<p><%= button_to "Delete Profile", @user, :method => :delete, class: "btn btn-danger"%></p><br>
 
 </div></center>
