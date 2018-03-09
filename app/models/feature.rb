@@ -26,6 +26,11 @@ class Feature < ApplicationRecord
 	end
 
 	def accessories
-		 eval(self[:hashreturn]).first[:faceAttributes][:accessories].first.map{|k,v| "#{k.capitalize} : #{v} "}.join(" / ")
+		 @things = eval(self[:hashreturn]).first[:faceAttributes][:accessories].first
+     if @things != nil
+       @things.map{|k,v| "#{k.capitalize} : #{v} "}.join(" / ")
+     else
+       "No Accessories"
+     end
 	end
 end

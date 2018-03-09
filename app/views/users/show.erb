@@ -46,36 +46,38 @@
 <br>
 <div class="signup"><center><img src="http://zitrocapital.com/media/msignup2.jpg" alt="Sign Up Page Image Logo"></div></center>
 <center><div class="user_dash">
-<h1>Welcome <%= @user.name.upcase %> To Your Dashboard</h1>
-<div class="panel panel-default"><h3>Click Below To Have Moodster Analyze Your Image </h3>
+<h1>Welcome <%= @user.name.capitalize %></h1>
+<div class="panel panel-default"><h3>Click Below to Analyze Your Face </h3>
 <%= link_to "Take Picture", cam_path, method: :get, class: "btn btn-success" %>
 <br><p> </p></div>
 
-<!-- <h3>Hate Moodster?</h3><a class="btn btn-default" href="#why_do_you_hate_us">Delete Your Profile</a> -->
+<% if File.exist?('./app/assets/images/plzwork.jpg') %>
+	<%= image_tag("plzwork.jpg") %>
+<% end%>
 
-<h1><%= @user.name.upcase %>'s Daily Moods</h1>
+<h1><%= @user.name.upcase %>'s Face Analyses</h1>
 
  <row><div class="userfeature"><% @user.features.map do |feature| %>
        <div class="col-md-4 text-center" style="padding: 1em">
          <div class="card" style="background-color:#EBF0F2; padding: 1em">
            <div class="card-body">
 
-						 <h3 class="card-title">You are a:</h3>
+						 <h3 class="card-title">You look like you are:</h3>
              <h4 class="card-text text-center"><%= @user.features.last.gender.capitalize %></h4>
 
-						 <h3 class="card-title">You are approximately:</h3>
-						 <h4 class="card-text text-center" style="height: 10rem"><%= @user.features.last.age %></h4>
+						 <h3 class="card-title">You appear to be around:</h3>
+						 <h4 class="card-text text-center" style="height: 10rem"><%= @user.features.last.age %> years old</h4>
 
-						 <h3 class="card-title">You feel:</h3>
+						 <h3 class="card-title">Your face is exhibiting:</h3>
 						 <h4 class="card-text text-center" style="height: 10rem"><%= @user.features.last.emotions %></h4>
 
-						 <h3 class="card-title">We believe you are wearing:</h3>
+						 <h3 class="card-title">Makeup?:</h3>
  						<h4 class="card-text text-center" style="height: 10rem"><%= @user.features.last.makeup %></h4>
 
-						<h3 class="card-title">You are wearing:</h3>
+						<h3 class="card-title">Glasses?:</h3>
 						<h4 class="card-text text-center" style="height: 10rem"><%= @user.features.last.glasses %></h4>
 
-						<h3 class="card-title">You show signs of a:</h3>
+						<h3 class="card-title">Facial hair?:</h3>
 						<h4 class="card-text text-center" style="height: 10rem"><%= @user.features.last.facialHair %></h4>
 
 						<h3 class="card-title">We believe you are wearing:</h3>

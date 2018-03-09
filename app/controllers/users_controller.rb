@@ -28,6 +28,7 @@ class UsersController < ApplicationController
 
   def destroy
     @user.delete
+    File.delete('./app/assets/images/plzwork.jpg') if File.exist?('./app/assets/images/plzwork.jpg')
     redirect_to '/'
   end
 
