@@ -57,7 +57,7 @@ Moodster uses Microsoft's Facial Recognition to build an emotions model to creat
 * [Ruby](https://www.ruby-lang.org/en/) - The ruby framework used
 * [ActiveRecord](http://guides.rubyonrails.org/active_record_basics.html) - ActiveRecord Database Management
 * [SQLite3](https://www.sqlite.org/cli.html) - Database
-* [Microsoft Facial Recognition: Azure Face](https://azure.microsoft.com/en-us/services/cognitive-services/face/) - Database
+* [Microsoft Facial Recognition: Azure Face](https://azure.microsoft.com/en-us/services/cognitive-services/face/) - Facial Recognition
 
 ## Contributing
 
